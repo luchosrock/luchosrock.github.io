@@ -10,7 +10,7 @@ tags: []
 Whenever I'm in SQL Server (usually Management Studio) I allways have some good snippets in handy. I'll try to update this post as much as I can.
 
 
-### Find a stored procedure you just created but don't remember:
+- Find a stored procedure you just created but don't remember:
 
 {% highlight sql %}
 SELECT name, create_date, modify_date
