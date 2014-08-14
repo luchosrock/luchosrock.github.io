@@ -3,7 +3,7 @@ layout: post
 title: "My favourite SQL commands"
 description: ""
 category: 
-tags: []
+tags: [snippets,slqserver]
 ---
 {% include JB/setup %}
 

@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Too bored to fill a form"
-description: ""
+description: "Simple trick to bypass silly surveys"
 category: 
-tags: []
+tags: [lifehacks]
 ---
 {% include JB/setup %}
 
