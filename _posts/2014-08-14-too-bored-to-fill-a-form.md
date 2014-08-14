@@ -27,7 +27,7 @@ document.getElementsByTagName('head')[0].appendChild(jq);
 jQuery.noConflict();
 {% endhighlight%}
 
-This will do the trick for Firefox, but I guess it should work in Chrome too.
+This will do the trick for Firefox, but I guess it should work on Chrome too.
 
 And that's all! At least for _radio_ _buttons_ kind of surveys. If anything else comes up I eventually update this post to keep up.
 
