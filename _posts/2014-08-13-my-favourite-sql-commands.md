@@ -19,3 +19,10 @@ WHERE type = 'P'
 order by create_date desc
 {% endhighlight %}
 
+- Select all objects created by date (it will show tables also):
+
+{% highlight sql %}
+SELECT name, create_date, modify_date
+FROM sys.objects
+order by create_date desc
+{% endhighlight %}
