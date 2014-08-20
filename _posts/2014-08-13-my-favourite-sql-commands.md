@@ -27,7 +27,7 @@ FROM sys.objects
 order by create_date desc
 {% endhighlight %}
 
-- Find functions by name:
+- Find functions by name (`funName` is the name) :
 
 {% highlight sql %}
 SELECT name AS function_name
@@ -35,5 +35,5 @@ SELECT name AS function_name
 ,type_desc
 FROM sys.objects
 WHERE type_desc LIKE '%FUNCTION%'
-and name like '%rut%'
+and name like '%funName%'
 {% endhighlight %}
