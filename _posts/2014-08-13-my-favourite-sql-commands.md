@@ -26,3 +26,14 @@ SELECT name, create_date, modify_date
 FROM sys.objects
 order by create_date desc
 {% endhighlight %}
+
+- Find functions by name:
+
+{% highlight sql %}
+SELECT name AS function_name
+,SCHEMA_NAME(schema_id) AS schema_name
+,type_desc
+FROM sys.objects
+WHERE type_desc LIKE '%FUNCTION%'
+and name like '%rut%'
+{% endhighlight %}
