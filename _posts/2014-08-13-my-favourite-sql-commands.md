@@ -37,3 +37,12 @@ FROM sys.objects
 WHERE type_desc LIKE '%FUNCTION%'
 and name like '%funName%'
 {% endhighlight %}
+
+- Find text in stored procedures (it's helpful if you want to know wich object calls a function or procedure).
+
+{% highlight sql %}
+SELECT OBJECT_NAME(object_id) 'object_name',
+       OBJECT_DEFINITION(object_id) 'definition'
+FROM sys.procedures
+WHERE OBJECT_DEFINITION(object_id) LIKE '%wordyouwanttofind%'
+{% endhighlight %}
