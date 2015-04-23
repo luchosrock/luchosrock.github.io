@@ -33,7 +33,7 @@ That created a web server instance in `testapp` directory. Navigating to `http:/
 
 Now let's add some structure. To do that, the Rails framework offers scaffolding. Let's see how it works:
 
-	$ rails generate scaffolding Ticket name:string description:string active:boolean
+	$ rails generate scaffold Ticket name:string description:string active:boolean
 
 After all scaffolding process finishes, we run a migration to create the tables needed to store the ticket information.
 
