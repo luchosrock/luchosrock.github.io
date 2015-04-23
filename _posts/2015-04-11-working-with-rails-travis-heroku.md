@@ -7,9 +7,11 @@ tags: []
 ---
 {% include JB/setup %}
 
+This post is not finished yet. Please be patient.
+
 ###Create the GitHub repository.
 
-If you already have a GitHub repository
+
 
 ###Create the Rails application.
 
@@ -68,11 +70,11 @@ First of all, we need to tell Heroku that we have a public repository wich conta
 
 But how do we integrate this deployment workflow into a Heroku application (or how to enable automatic deploys on Heroku). Actually it's pretty simple with the travis command line tool. Just install the gem with:
 
-	gem install travis
+	$ gem install travis
 
 And use it to engage your GitHub app with Heroku:
 
-	travis setup heroku
+	$ travis setup heroku
 
 This will launch an interactive scripts to setup the `.travis.yml` file.
 
