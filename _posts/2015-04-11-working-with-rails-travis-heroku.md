@@ -37,22 +37,23 @@ Now let's add some structure. To do that, the Rails framework offers scaffolding
 
 After all scaffolding process finishes, we run a migration to create the tables needed to store the ticket information.
 
-	$rake db:migrate
+	$ rake db:migrate
 
 
 ###Deploy the application to Heroku.
 
 We need to install the Heroku toolbelt first in order to be able to interact with Heroku from our system. Once installed, just a few steps to create the application in Heroku:
 
-	heroku login
+	$ heroku login
 	#prompts for username/password
-	heroku create
+	$ heroku create testapp
 
-Now we can publish our Heroku application with `git push heroku master` and what we will see is the deployment almost instantly. Please follow this well explained post from Heroku on how to push Rails apps.
+Where `testapp` is the name of the application in Heroku (It has to be unique). Since heroku toolbelt works with a _machete_ _design_ philosophy, you can just do `heroku create` and a new unique name will be asigned automatically.
+
+Now we can publish our Heroku application with `git push heroku master` and what we will see is the deployment almost instantly. Please follow this well explained post from Heroku on how to create and push Rails apps to their platform.
 
 
-
-But what had just happened? heroku received an update on the repository so it deploys the application automatically. This could be good if we want to just push changes directly to Heroku, but our GitHub repository now is outdated. Do we need to do the `git push` to both GitHub and Heroku every time we make a significant change in our application? Hell no! That's not a good sign at all! That could cause some trouble in the future as our repository grows in participants. That is why an automated deployment workflow is a good and healthy choice to go, and Travis CI is a great tool to achieve this.
+But what had just happened? Heroku received an update on the repository so it deploys the application automatically. This could be good if we want to just push changes directly to Heroku, but our GitHub repository now is outdated. Do we need to do the `git push` to both GitHub and Heroku every single time we make a significant change in our application? Hell no! That's not a good sign at all! That could cause some trouble in the future as our repository grows in participants. That is why an automated deployment workflow is a good and healthy choice to go, and Travis CI is a great tool to achieve this.
 
 ###Travis CI
 
