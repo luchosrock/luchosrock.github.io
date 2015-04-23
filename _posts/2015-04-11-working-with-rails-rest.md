@@ -9,15 +9,38 @@ tags: []
 
 ###Create the GitHub repository.
 
-I'm still working on it.
+If you already have a GitHub repository
 
 ###Create the Rails application.
 
-I'm still working on it.
+I won't explain details about how to get started with Rails. There's plenty of documentation on the web (personally I recommend gorails approach). Having said that, let's create a simple rails application:
+
+	$ rails new testapp
+
+That instruction is enough to create a blank application inside `testapp` directory. Now you can navigate into it and test your brand new app:
+	
+	$ cd testapp
+	$ rails server
+	=> Booting WEBrick
+	=> Rails 4.2.0 application starting in development on http://localhost:3000
+	=> Run `rails server -h` for more startup options
+	=> Ctrl-C to shutdown server
+	[2015-04-23 10:17:21] INFO  WEBrick 1.3.1
+	[2015-04-23 10:17:21] INFO  ruby 2.0.0 (2014-11-13) [i686-linux]
+	[2015-04-23 10:17:21] INFO  WEBrick::HTTPServer#start: pid=2562 port=3000
+
+That created a web server instance in `testapp` directory. Navigating to `http://localhost:3000` will display a simple welcome message from Rails.
+
+Now let's add some structure. To do that, the Rails framework offers scaffolding. Let's see how it works:
+
+	$ rails generate scaffolding Ticket name:string description:string active:boolean
+
+After all scaffolding process finishes, we run a migration to create the tables needed to store the ticket information.
+
+	$rake db:migrate
+
 
 ###Deploy the application to Heroku.
-
-I'm still working on it.
 
 We need to install the Heroku toolbelt first in order to be able to interact with Heroku from our system. Once installed, just a few steps to create the application in Heroku:
 
@@ -25,7 +48,9 @@ We need to install the Heroku toolbelt first in order to be able to interact wit
 	#prompts for username/password
 	heroku create
 
-Now we can publish our Heroku application with `git push heroku master` and what we will see is the deployment almost instantly.
+Now we can publish our Heroku application with `git push heroku master` and what we will see is the deployment almost instantly. Please follow this well explained post from Heroku on how to push Rails apps.
+
+
 
 But what had just happened? heroku received an update on the repository so it deploys the application automatically. This could be good if we want to just push changes directly to Heroku, but our GitHub repository now is outdated. Do we need to do the `git push` to both GitHub and Heroku every time we make a significant change in our application? Hell no! That's not a good sign at all! That could cause some trouble in the future as our repository grows in participants. That is why an automated deployment workflow is a good and healthy choice to go, and Travis CI is a great tool to achieve this.
 
@@ -48,6 +73,6 @@ And use it to engage your GitHub app with Heroku:
 
 	travis setup heroku
 
-This will launch an interactive scripts to setup the ` .travis.yml` file.
+This will launch an interactive scripts to setup the `.travis.yml` file.
 
 Now all we need to do is push the repository to GitHub and voila! the deployment process starts. We can check the results of the build in Travis CI and Heroku activity log
