@@ -53,8 +53,39 @@ We need to install the Heroku toolbelt first in order to be able to interact wit
 
 Where `testapp` is the name of the application in Heroku (It has to be unique). Since heroku toolbelt works with a _machete_ _design_ philosophy, you can just do `heroku create` and a new unique name will be asigned automatically.
 
-Now we can publish our Heroku application with `git push heroku master` and what we will see is the deployment almost instantly. Please follow [this well explained post](https://devcenter.heroku.com/articles/getting-started-with-rails4) from Heroku on how to create and push Rails apps to their platform.
+Now we can publish our Heroku application with `git push heroku master` and what we will see is the deployment almost instantly. Please follow [this well explained post](https://devcenter.heroku.com/articles/getting-started-with-rails4) from Heroku on how to create and push Rails apps to their platform. By default, Heroku uses Postgresql as is database engine, and encourage it's use during development as well. In my opinion this is a good call, but SQLite is just fine for this kind of projects. What we will do in order to keep SQLite for development and PostgreSQL for production is to edit our `Gemfile`:
 
+{% highlight ruby %}
+group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
+
+group :production do
+	gem 'rails_12factor'
+	gem 'pg'
+end
+
+{% endhighlight %}
+
+Now we edit our `config/database.yml`
+
+{% highlight yaml %}
+production:
+  <<: *default
+  database: db/production.pg
+  username: myapp
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+
+{% endhighlight %}
 
 But what had just happened? Heroku received an update on the repository so it deploys the application automatically. This could be good if we want to just push changes directly to Heroku, but our GitHub repository now is outdated. Do we need to do the `git push` to both GitHub and Heroku every single time we make a significant change in our application? Hell no! That's not a good sign at all! That could cause some trouble in the future as our repository grows in participants. That is why an automated deployment workflow is a good and healthy choice to go, and Travis CI is a great tool to achieve this.
 
