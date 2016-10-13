@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [snippets,slqserver]
 ---
-{% include JB/setup %}
 
 Whenever I'm in SQL Server (usually Management Studio) I allways have some good snippets in handy. I'll try to update this post as much as I can.
 

@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 This post is not finished yet. Please be patient.
 

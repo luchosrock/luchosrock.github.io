@@ -5,7 +5,6 @@ description: "Simple trick to bypass silly surveys"
 category: 
 tags: [lifehacks,snippets,web]
 ---
-{% include JB/setup %}
 
 Everytime I sign up to my classes I'm prompted with some silly surveys. OK, I know there are _usefull_ to evaluate last classes results but sometimes I'm just too bored to fill them. 
 
