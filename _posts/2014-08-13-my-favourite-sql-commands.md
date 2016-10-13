@@ -45,3 +45,9 @@ SELECT OBJECT_NAME(object_id) 'object_name',
 FROM sys.procedures
 WHERE OBJECT_DEFINITION(object_id) LIKE '%wordyouwanttofind%'
 {% endhighlight %}
+
+- Rename a column 
+
+{% highlight sql %}
+EXEC sp_rename 'table_name.old_name', 'new_name', 'COLUMN'
+{% endhighlight %}
