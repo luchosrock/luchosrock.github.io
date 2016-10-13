@@ -9,11 +9,11 @@ tags: []
 
 This post is not finished yet. Please be patient.
 
-###Create the GitHub repository.
+### Create the GitHub repository.
 
 
 
-###Create the Rails application.
+### Create the Rails application.
 
 I won't explain details about how to get started with Rails. There's plenty of documentation on the web (I personally recommend [gorails](https://gorails.com/setup/ubuntu/14.10 approach) ). Having said that, let's create a simple rails application:
 
@@ -43,7 +43,7 @@ After all scaffolding process finishes, we run a migration to create the tables 
 
 For more information on scaffolding Rails applications please look at ruby on rails official [documentation](http://guides.rubyonrails.org/command_line.html).
 
-###Deploy the application to Heroku.
+### Deploy the application to Heroku.
 
 We need to install the Heroku toolbelt first in order to be able to interact with Heroku from our system. Once installed, just a few steps to create the application in Heroku:
 
@@ -89,7 +89,7 @@ production:
 
 But what had just happened? Heroku received an update on the repository so it deploys the application automatically. This could be good if we want to just push changes directly to Heroku, but our GitHub repository now is outdated. Do we need to do the `git push` to both GitHub and Heroku every single time we make a significant change in our application? Hell no! That's not a good sign at all! That could cause some trouble in the future as our repository grows in participants. That is why an automated deployment workflow is a good and healthy choice to go, and Travis CI is a great tool to achieve this.
 
-###Travis CI
+### Travis CI
 
 Travis CI is a Continuous Integration system, that means it automates the tasks needed to deploy an application and run tests. In other words, it puts it seal of aproval, so now every push made to our repository has to _compile_. We can sign up directly with GitHub and sync a repository.
 To get started we need to define a `.travis.yml` file. This will tell Travis what kind of application is and what to do with it.
@@ -98,7 +98,7 @@ To get started we need to define a `.travis.yml` file. This will tell Travis wha
 First of all, we need to tell Heroku that we have a public repository wich contains the application code to be deployed. To do this, we select the application from the dashboard, and select the Deploy option on the menu bar. Now we have to authorize Heroku to inspect our repository through GitHub.
 
 
-###Integrate with Travis CI
+### Integrate with Travis CI
 
 But how do we integrate this deployment workflow into a Heroku application (or how to enable automatic deploys on Heroku). Actually it's pretty simple with the travis command line tool. Just install the gem with:
 
