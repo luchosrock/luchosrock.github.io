@@ -1,27 +1,22 @@
 ---
-layout: page
-title: Blog
+layout: default
 ---
 
-<div class="content">
-	<div class="post">
+<div class="home">
 
-		{% for post in site.posts %}
-		<!--<a href="{{ post.url }}">{{ post.title }}</a> -->
-		<h2>{{ post.title }}</h2>
-		<div>
-			<div class="date">
-				<span>{{ post.date | date: "%B %e, %Y" }}</span> 
-			</div>
-			<div>
-				{{ post.content }}
-			</div>
-		</div>
-		<a href="{{ post.url }}">Read more...</a>		
-		<hr/>
-		{% endfor %}
-	</div>
-</div>
-<footer>
+  <h1 class="post-title">Articles</h1>
 
-</footer>
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <span class="post-meta"><small>{{ post.date | date: "%b %-d, %Y" }}</small></span>
+        </h2>
+         
+      </li>
+
+    {% endfor %}
+  </ul>
+
+{% include pagination.html %}
