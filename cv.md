@@ -2,7 +2,7 @@
 
 Desarrollador Full Stack
 +569 642 931 97
-
+[luchosrock@gmail.com](mailto:luchosrock@gmail.com)
 > 
 
 ## Experiencia
