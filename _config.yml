@@ -14,7 +14,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Vyaasa is a minimal Jekyll theme meant for writers. Long text posts will look good with this layout. This is a free theme and can be used for all kinds of Jekyll blogs.
 #baseurl: "/vyaasa" # the subpath of your site, e.g. /blog
 url: "https://luchosrock.github.io" # the base hostname & protocol for your site
-
+remote_theme: killercup/jekyll-theme-scribbles
 permalink: :categories/:year/:month/:day/:title 
 
 # Build settings
